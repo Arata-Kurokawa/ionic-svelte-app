@@ -6,7 +6,10 @@ import preprocess from 'svelte-preprocess'
 export default defineConfig({
   plugins: [
     svelte({
-      preprocess: preprocess()
+      compilerOptions: {
+        customElement: true
+      },
+      preprocess: preprocess({ typescript: true })
     })
   ]
 })

@@ -1,6 +1,8 @@
-<script>
-  let count = 0
-  const increment = () => {
+<svelte:options tag="app-counter" />
+
+<script lang="ts">
+  let count: number = 0
+  const increment = (): void => {
     count += 1
   }
 </script>

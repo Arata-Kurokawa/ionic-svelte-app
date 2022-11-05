@@ -1,8 +1,14 @@
-import './app.css'
-import App from './App.svelte'
+import ionicSetup from './lib/ionic/ionic-setup'
 
-const app = new App({
-  target: document.getElementById('app')
-})
+import './App.svelte'
+import './views/pages/music/Music.svelte'
+import './views/pages/movies/Movies.svelte'
+import './views/pages/games/Games.svelte'
 
-export default app
+ionicSetup()
+
+// const app = new App({
+//   target: document.getElementById('app')
+// })
+//
+// export default app

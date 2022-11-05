@@ -1,45 +1,49 @@
-<script>
-  import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
+<svelte:options tag="app-root" />
+
+<script lang="ts">
+  import { onMount } from "svelte"
+
+  let musicNav: HTMLIonNavElement
+  let moviesNav: HTMLIonNavElement
+  let gamesNav: HTMLIonNavElement
+
+   onMount(() => {
+     musicNav.setRoot('app-music', { ionNav: musicNav })
+     moviesNav.setRoot('app-movies')
+     gamesNav.setRoot('app-games')
+   })
 </script>
 
-<main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank"> 
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank"> 
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+<link href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" rel="stylesheet">
 
-  <div class="card">
-    <Counter />
-  </div>
+<ion-app>
+  <ion-tabs>
+    <ion-tab tab="music">
+      <ion-nav bind:this={musicNav}>
+      </ion-nav>
+    </ion-tab>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
+    <ion-tab tab="movies">
+      <ion-nav bind:this={moviesNav}></ion-nav>
+    </ion-tab>
 
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
+    <ion-tab tab="games">
+      <ion-nav bind:this={gamesNav}></ion-nav>
+    </ion-tab>
 
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="music" selected="true">
+        <ion-label>Music</ion-label>
+        <ion-icon name="musical-note"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="movies">
+        <ion-label>Movies</ion-label>
+        <ion-icon name="videocam"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="games">
+        <ion-label>Games</ion-label>
+        <ion-icon name="game-controller"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-app>
