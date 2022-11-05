@@ -3,15 +3,19 @@
 <script lang="ts">
   import { onMount } from "svelte"
 
+  import './views/pages/music/Music.svelte'
+  import './views/pages/movies/Movies.svelte'
+  import './views/pages/games/Games.svelte'
+
   let musicNav: HTMLIonNavElement
   let moviesNav: HTMLIonNavElement
   let gamesNav: HTMLIonNavElement
 
-   onMount(() => {
-     musicNav.setRoot('app-music', { ionNav: musicNav })
-     moviesNav.setRoot('app-movies')
-     gamesNav.setRoot('app-games')
-   })
+  onMount(async () => {
+    await musicNav.setRoot('app-music', { ionNav: musicNav })
+    await moviesNav.setRoot('app-movies')
+    await gamesNav.setRoot('app-games')
+  })
 </script>
 
 <link href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" rel="stylesheet">

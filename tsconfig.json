@@ -9,4 +9,11 @@
     "__sapper__/*",
     "public/*"
   ],
+  "compilerOptions": {
+    "baseUrl": "./",
+//    "paths": {
+//      "$views/*": ["./src/views/*"],
+//      "$views": ["./src/views"],
+//    }
+  }
 }
