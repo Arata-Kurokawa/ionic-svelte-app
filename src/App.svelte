@@ -4,7 +4,7 @@
   import Music from './views/pages/music/Music.svelte'
   import Movies from './views/pages/movies/Movies.svelte'
   import Games from './views/pages/games/Games.svelte'
-  import { createHTMLCompFromSvelte } from "./lib/ionic/create-html-comp-from-svelte"
+  import { createHTMLCompFromSvelte } from "./lib/svelte/create-html-comp-from-svelte"
 
   let musicNav: HTMLIonNavElement
   let moviesNav: HTMLIonNavElement

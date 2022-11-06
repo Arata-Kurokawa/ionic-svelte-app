@@ -2,7 +2,7 @@
   import Counter from '../../../lib/Counter.svelte'
   import Movies from '../../../views/pages/movies/Movies.svelte'
 
-  import { createHTMLCompFromSvelte } from "../../../lib/ionic/create-html-comp-from-svelte"
+  import { createHTMLCompFromSvelte } from "../../../lib/svelte/create-html-comp-from-svelte"
 
   export let ionNav: HTMLIonNavElement
 
