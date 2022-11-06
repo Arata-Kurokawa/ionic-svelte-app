@@ -20,8 +20,6 @@
   })
 </script>
 
-<link href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" rel="stylesheet">
-
 <ion-app>
   <ion-tabs>
     <ion-tab tab="music">
