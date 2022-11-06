@@ -24,7 +24,9 @@
   <Counter
     on:click="{() => { console.log('clickCounter') }}"
   >
+    <p slot="title">slot title</p>
+    <p>slot default</p>
   </Counter>
-
+  <br>
   <ion-button on:click={goToMovies}>to Movies</ion-button>
 </ion-content>

@@ -10,6 +10,11 @@
   }
 </script>
 
+<div>
+  <slot name="title"></slot>
+  <slot></slot>
+</div>
+
 <button on:click={increment}>
   count is {count}
 </button>

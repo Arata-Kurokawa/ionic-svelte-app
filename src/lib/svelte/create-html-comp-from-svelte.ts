@@ -4,7 +4,7 @@ export const createHTMLCompFromSvelte = (
   component: new (...args: any) => SvelteComponent,
   componentProps: {}
 ): HTMLDivElement => {
-  let navContent = document.createElement('div');
+  let navContent = document.createElement('div')
 
   const props = {
     ...componentProps,
