@@ -10,7 +10,7 @@ export const createHTMLCompFromSvelte = (
     ...componentProps,
   };
 
-  const svelteComponent = new component({
+  new component({
     target: navContent,
     props: props,
   });

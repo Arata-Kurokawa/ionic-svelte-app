@@ -36,7 +36,7 @@
     </ion-tab>
 
     <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="music" selected="true">
+      <ion-tab-button tab="music">
         <ion-label>Music</ion-label>
         <ion-icon name="musical-note"></ion-icon>
       </ion-tab-button>
