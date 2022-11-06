@@ -1,12 +1,12 @@
 <svelte:options tag="app-counter" />
 
 <script lang="ts">
-  export let click: () => {}
+  export let onclick: () => {}
 
   let count: number = 0
   const increment = (): void => {
     count += 1
-    click()
+    onclick()
   }
 </script>
 

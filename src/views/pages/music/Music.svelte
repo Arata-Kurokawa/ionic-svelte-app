@@ -5,10 +5,6 @@
 
   export let ionNav: HTMLIonNavElement
 
-  let clickCounter = () => {
-    console.log('clickCounter')
-  }
-
   export let goToMovies = () => {
     ionNav.push('app-movies', { ionNav: ionNav })
   }
@@ -23,7 +19,10 @@
 <ion-content fullscreen class="ion-padding">
   <h1>Music</h1>
 
-  <app-counter click="{clickCounter}"></app-counter>
+  <app-counter
+    onclick="{() => { console.log('clickCounter') }}"
+  >
+  </app-counter>
 
   <ion-button on:click={goToMovies}>to Movies</ion-button>
 </ion-content>
