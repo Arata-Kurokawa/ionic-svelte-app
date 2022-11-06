@@ -1,20 +1,22 @@
-<svelte:options tag="app-root" />
-
 <script lang="ts">
   import { onMount } from "svelte"
 
-  import './views/pages/music/Music.svelte'
-  import './views/pages/movies/Movies.svelte'
-  import './views/pages/games/Games.svelte'
+  import Music from './views/pages/music/Music.svelte'
+  import Movies from './views/pages/movies/Movies.svelte'
+  import Games from './views/pages/games/Games.svelte'
+  import { createHTMLCompFromSvelte } from "./lib/ionic/create-html-comp-from-svelte"
 
   let musicNav: HTMLIonNavElement
   let moviesNav: HTMLIonNavElement
   let gamesNav: HTMLIonNavElement
 
   onMount(async () => {
-    await musicNav.setRoot('app-music', { ionNav: musicNav })
-    await moviesNav.setRoot('app-movies')
-    await gamesNav.setRoot('app-games')
+    const musicRoot = createHTMLCompFromSvelte(Music, { ionNav: musicNav })
+    const moviesRoot = createHTMLCompFromSvelte(Movies, { ionNav: moviesNav })
+    const gamesRoot = createHTMLCompFromSvelte(Games, { ionNav: gamesNav })
+    await musicNav.setRoot(musicRoot)
+    await moviesNav.setRoot(moviesRoot)
+    await gamesNav.setRoot(gamesRoot)
   })
 </script>
 
