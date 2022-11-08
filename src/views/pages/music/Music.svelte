@@ -3,12 +3,23 @@
   import Movies from '../../../views/pages/movies/Movies.svelte'
 
   import { createHTMLCompFromSvelte } from "../../../lib/svelte/create-html-comp-from-svelte"
+  import {onDestroy} from "svelte";
+  import AppScreen from "../../../lib/app-screen";
+  import Login from "../login/Login.svelte";
 
   export let ionNav: HTMLIonNavElement
 
   export let goToMovies = () => {
-    const musicRoot = createHTMLCompFromSvelte(Movies, { ionNav: ionNav })
-    ionNav.push(musicRoot, { ionNav: ionNav })
+    const [html, _] = createHTMLCompFromSvelte(Movies, { ionNav: ionNav })
+    ionNav.push(html)
+  }
+
+  onDestroy(() => {
+    console.log('----------onDestroy Music-------------')
+  })
+
+  let setRootLogin = () => {
+    AppScreen.setRoot(Login, {})
   }
 </script>
 
@@ -27,6 +38,7 @@
     <p slot="title">slot title</p>
     <p>slot default</p>
   </Counter>
-  <br>
+
   <ion-button on:click={goToMovies}>to Movies</ion-button>
+  <ion-button on:click={setRootLogin}>set root login</ion-button>
 </ion-content>

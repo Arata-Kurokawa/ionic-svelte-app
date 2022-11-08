@@ -1,8 +1,8 @@
 <svelte:options tag="app-movies" />
 
 <script lang="ts">
-  import {createHTMLCompFromSvelte} from "../../../lib/svelte/create-html-comp-from-svelte";
-  import Games from "../games/Games.svelte";
+  import { createHTMLCompFromSvelte } from "../../../lib/svelte/create-html-comp-from-svelte"
+  import Games from "../games/Games.svelte"
 
   export let ionNav: HTMLIonNavElement
 
@@ -11,8 +11,8 @@
   }
 
   let goToGames = () => {
-    const gamesRoot = createHTMLCompFromSvelte(Games, { ionNav: ionNav })
-    ionNav.push(gamesRoot, { ionNav: ionNav })
+    const [html, _] = createHTMLCompFromSvelte(Games, { ionNav: ionNav })
+    ionNav.push(html)
   }
 </script>
 

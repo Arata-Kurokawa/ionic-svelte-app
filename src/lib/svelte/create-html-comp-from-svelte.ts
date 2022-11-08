@@ -3,17 +3,17 @@ import type {SvelteComponent} from "svelte"
 export const createHTMLCompFromSvelte = (
   component: new (...args: any) => SvelteComponent,
   componentProps: {}
-): HTMLDivElement => {
+): [HTMLDivElement, SvelteComponent] => {
   let navContent = document.createElement('div')
 
   const props = {
     ...componentProps,
   };
 
-  new component({
+  const c = new component({
     target: navContent,
     props: props,
   });
 
-  return navContent
+  return [navContent, c]
 };

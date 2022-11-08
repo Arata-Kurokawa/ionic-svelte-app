@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
+  import {createEventDispatcher, onDestroy} from "svelte";
 
   const dispatcher = createEventDispatcher()
 
@@ -8,6 +8,10 @@
     count += 1
     dispatcher('click', count)
   }
+
+  onDestroy(() => {
+    console.log('---------- onDestroy Counter -----------')
+  })
 </script>
 
 <div>
